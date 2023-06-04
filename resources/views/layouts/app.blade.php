@@ -31,7 +31,7 @@
 
 <!-- Content Wrapper. Contains page content -->
     <main>
-        <section class="content">
+        <section class="content container">
             @yield('content')
         </section>
     </main>

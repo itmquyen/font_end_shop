@@ -17,6 +17,18 @@ Route::get('/', function () {
     return view('home');
 });
 
+Route::get('wishlist/', function () {
+    return view('wishlist');
+});
+
+Route::get('product/', function () {
+    return view('products.detail_row');
+});
+
+Route::get('product/detail/', function () {
+    return view('products.detail');
+});
+
 
 Route::get('/home', [App\Http\Controllers\HomeController::class, 'index'])->name('home');
 Route::get('menus',[App\Http\Controllers\MenuController::class, 'index']);
