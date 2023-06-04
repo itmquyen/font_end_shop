@@ -8067,7 +8067,7 @@ body .component-desc.component-desc-ct {
 32 - Banners
 ----------------------------------*/
 .banners-list {
-	margin: 0 -10px 50px;
+	margin: 0 0px 50px;
 }
 .banners-list:after {
 	clear: both;
