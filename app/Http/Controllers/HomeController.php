@@ -3,6 +3,7 @@
 namespace App\Http\Controllers;
 
 use Illuminate\Http\Request;
+use Illuminate\Routing\Route;
 
 class HomeController extends Controller
 {
@@ -14,6 +15,16 @@ class HomeController extends Controller
     public function __construct()
     {
         $this->middleware('auth');
+    }
+
+        /**
+     * Routes
+     *
+     * @return void
+     */
+    public static function routes()
+    {
+        Route::get('/', [HomeController::class, 'index']);
     }
 
     /**
