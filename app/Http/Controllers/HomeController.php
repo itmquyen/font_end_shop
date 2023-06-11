@@ -2,8 +2,10 @@
 
 namespace App\Http\Controllers;
 
+use App\Helpers\ExternalApi\HttpClient;
 use Illuminate\Http\Request;
-use Illuminate\Routing\Route;
+use Illuminate\Support\Facades\Route;
+use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -12,9 +14,10 @@ class HomeController extends Controller
      *
      * @return void
      */
+    private $client;
     public function __construct()
     {
-        $this->middleware('auth');
+        $this->client = new HttpClient();
     }
 
         /**
@@ -34,6 +37,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        return view('home');
+        $slides = $this->client->get('http://dev.shop/api/layout/slide',[]);
+        return view('home', ['slides' => $slides]);
     }
 }

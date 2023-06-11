@@ -1,4 +1,7 @@
-   <!-- Header - start -->
+@php
+use App\Helpers\ExternalApi\HttpClient\Menu;
+@endphp
+  <!-- Header - start -->
    <header class="header">
 
     <!-- Topbar - start -->
