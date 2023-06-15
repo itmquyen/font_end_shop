@@ -13,7 +13,6 @@ class HomeController extends Controller
      *
      * @return void
      */
-    private $client;
     public function __construct()
     {
     }
@@ -35,7 +34,7 @@ class HomeController extends Controller
      */
     public function index()
     {
-        $slides = $this->client->get('http://dev.shop/api/layout/slide',[]);
+        $slides = HttpClient::get('http://dev.shop/api/layout/slide',[]);
         return view('home', ['slides' => $slides]);
     }
 }
