@@ -5,7 +5,6 @@ namespace App\Http\Controllers;
 use App\Helpers\ExternalApi\HttpClient;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
-use Illuminate\Support\Facades\Log;
 
 class HomeController extends Controller
 {
@@ -17,10 +16,9 @@ class HomeController extends Controller
     private $client;
     public function __construct()
     {
-        $this->client = new HttpClient();
     }
 
-        /**
+    /**
      * Routes
      *
      * @return void
