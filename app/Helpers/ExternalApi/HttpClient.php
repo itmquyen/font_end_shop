@@ -47,7 +47,7 @@ class HttpClient
             });
             $stack->push($retryMiddleware);
             $client = new Client(array_merge($options, ['handler' => $stack]));
-            $response = $client->get($url . $params);
+            $response = $client->get($url , $params);
             $data = json_decode($response->getBody(), true);
             if ($response->getStatusCode() !== HttpStatuses::HTTP_OK) {
                 BatchLogger::writeBatchLog($channel, DateHelper::parseWithTime(), "GET method: $url fail " . json_encode($data), json_encode($response->getBody()));

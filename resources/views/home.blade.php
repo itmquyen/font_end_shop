@@ -7,7 +7,7 @@
             <ul class="slides">
                 @foreach ($slides as $slide)
                 <li>
-                    <img src="http://dev.shop/{{$slide['img']}}" alt="{{$slide['img']}}">
+                    <img src="http://dev.shop/uploads/gallery/{{$slide['img']}}" alt="{{$slide['img']}}">
                     <div class="fr-slider-cont">
                         {!!$slide['content']!!}
                     </div>

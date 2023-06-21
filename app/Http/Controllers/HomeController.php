@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 
 use App\Helpers\ExternalApi\HttpClient;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 use Illuminate\Support\Facades\Route;
 
 class HomeController extends Controller
@@ -35,6 +36,6 @@ class HomeController extends Controller
     public function index()
     {
         $slides = HttpClient::get('http://dev.shop/api/layout/slide',[]);
-        return view('home', ['slides' => $slides]);
+        return view('home', ['slides' => $slides['data']['slides']]);
     }
 }
